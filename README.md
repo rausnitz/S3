@@ -6,6 +6,11 @@ This fork of https://github.com/LiveUI/S3 includes only the S3 signer code, whic
 
 ## Usage
 
+Add to dependencies
+```swift
+.package(url: "https://github.com/rausnitz/S3.git", .branch("master"))
+```
+
 Register service in your configure method
 
 ```swift

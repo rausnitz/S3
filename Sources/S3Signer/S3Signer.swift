@@ -99,7 +99,7 @@ extension S3Signer {
         
         let stringToSign = try createStringToSign(canonRequest, dates: dates, region: region)
         let signature = try createSignature(stringToSign, timeStampShort: dates.short, region: region)
-        let presignedURL = URL(string: fullURL.absoluteString.appending("&x-amz-signature=\(signature)"))
+        let presignedURL = URL(string: fullURL.absoluteString.appending("&X-Amz-Signature=\(signature)"))
         return presignedURL
     }
     

@@ -72,7 +72,7 @@ extension S3Signer {
             let signHeaders = signed(headers: headers).encode(type: .queryAllowed) else {
                 throw Error.invalidEncoding
         }
-        let fullURL = "\(url.absoluteString)?x-amz-algorithm=AWS4-HMAC-SHA256&x-amz-credential=\(config.accessKey)%2F\(credScope)&x-amz-date=\(dates.long)&x-amz-expires=\(expiration.value)&x-amz-signedheaders=\(signHeaders)"
+        let fullURL = "\(url.absoluteString)?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=\(config.accessKey)%2F\(credScope)&X-Amz-Date=\(dates.long)&X-Amz-Expires=\(expiration.value)&X-Amz-SignedHeaders=\(signHeaders)"
         
         // This should never throw.
         guard let url = URL(string: fullURL) else {
